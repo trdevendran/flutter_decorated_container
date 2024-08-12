@@ -1,27 +1,45 @@
+# flutter_decorated_container
 A Customisable Container widget for the dashed border with rounded corner radius and its background
 color.
 
 ## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- A Container with special decorated options to make the widget more powerful
+  - Dashed border around the container with rounded corner radius
+  - Customisable strokeColor for the dashed line
+  - Both width and gap of the dash can be customised
+  - fillColor as background color of the container
 
 ## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
+### With Default values
 ```dart
-
-const like = 'sample';
+DecoratedContainer(
+  cornerRadius: 16,
+  child: Center(child: Text("sample child widget")),
+)
 ```
 
-## Additional information
+### With customised values
+```dart
+DecoratedContainer(
+  strokeWidth: 3,
+  dashSpace: 4,
+  dashWidth: 6,
+  fillColor: Colors.grey,
+  cornerRadius: 16,
+  strokeColor: Colors.red,
+  child: Center(child: Text("sample child widget")),
+)
+```
+### The widget used like below in some other projects
+<img width="350" alt="Screenshot 2024-08-12 at 9 14 49 AM" src="https://github.com/user-attachments/assets/d7f73ea2-2d0e-4277-9e2c-a059c895b251">
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Configuration Parameters
+| Variable Name  | Default Value | Purpose                                                                                      |
+|----------------|---------------|----------------------------------------------------------------------------------------------|
+| `strokeColor`  | `Colors.grey`| Specifies the color of the border or stroke around the `Container`.                           |
+| `fillColor`    | `Colors.white`| Specifies the color used to fill the inside of the  `Container`.                             |
+| `strokeWidth`  | `2.0`         | Defines the thickness of the border or stroke.                                               |
+| `dashWidth`    | `5.0`         | Specifies the width of each dash in a dashed border.                                         |
+| `dashSpace`    | `3.0`         | Specifies the space between each dash in a dashed border.                                    |
+| `cornerRadius` | `null`        | Defines the radius of the corners for rounded shapes. If `null`, the shape has sharp corners.|
+| `child`        | `null`        | Defines the child element as a `Widget`.                                                     |
