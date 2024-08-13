@@ -39,12 +39,12 @@ DecoratedContainer(
 
 
 ## Configuration Parameters
-| Variable Name  | Default Value | Purpose                                                                                      |
-|----------------|---------------|----------------------------------------------------------------------------------------------|
-| `strokeColor`  | `Colors.grey`| Specifies the color of the border or stroke around the `Container`.                           |
-| `fillColor`    | `Colors.white`| Specifies the color used to fill the inside of the  `Container`.                             |
-| `strokeWidth`  | `2.0`         | Defines the thickness of the border or stroke.                                               |
-| `dashWidth`    | `5.0`         | Specifies the width of each dash in a dashed border.                                         |
-| `dashSpace`    | `3.0`         | Specifies the space between each dash in a dashed border.                                    |
-| `cornerRadius` | `null`        | Defines the radius of the corners for rounded shapes. If `null`, the shape has sharp corners.|
-| `child`        | `null`        | Defines the child element as a `Widget`.                                                     |
+| Variable Name  | Default Value  | Purpose                                                                                       |
+|----------------|----------------|-----------------------------------------------------------------------------------------------|
+| `strokeColor`  | `Colors.grey`  | Specifies the color of the border or stroke around the `Container`.                           |
+| `fillColor`    | `Colors.white` | Specifies the color used to fill the inside of the  `Container`.                              |
+| `strokeWidth`  | `2.0`          | Defines the thickness of the border or stroke.                                                |
+| `dashWidth`    | `5.0`          | Specifies the width of each dash in a dashed border.                                          |
+| `dashSpace`    | `3.0`          | Specifies the space between each dash in a dashed border.                                     |
+| `cornerRadius` | `null`         | Defines the radius of the corners for rounded shapes. If `null`, the shape has sharp corners. |
+| `child`        | `null`         | Defines the child element as a `Widget`.                                                      |

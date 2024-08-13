@@ -3,19 +3,50 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class DecoratedContainer extends StatelessWidget {
+  /// The [child] contained by the container.
+  ///
+  /// If null, and if the [constraints] are unbounded or also null, the
+  /// container will expand to fill all available space in its parent, unless
+  /// the parent provides unbounded constraints, in which case the container
+  /// will attempt to be as small as possible.
+  ///
+  /// {@macro flutter.widgets.ProxyWidget.child}
   final Widget? child;
+
+  /// Specifies the color of the border or stroke around the [Widget]
   final Color strokeColor;
+
+  /// Specifies the color used to fill the inside of the  [Widget]
   final Color fillColor;
+
+  /// How wide to make edges to be drawn. The width is given in logical pixels measured in
+  /// the direction orthogonal to the direction of the path.
+  ///
+  /// Defaults to 0.0, which correspond to a hairline width.
   final double strokeWidth;
+
+  /// Specifies the width of each dash in a dashed border
   final double dashWidth;
+
+  /// Specifies the space between each dash in a dashed border
   final double dashSpace;
+
+  /// Defines the radius of the corners for rounded shapes. If `null`, the shape has sharp corners
   final double? cornerRadius;
+
+  /// Empty space to inscribe inside the [decoration]. The [child], if any, is
+  /// placed inside this padding.
+  ///
+  /// This padding is in addition to any padding inherent in the [decoration];
+  /// see [Decoration.padding].
+  final EdgeInsetsGeometry? padding;
 
   const DecoratedContainer(
       {super.key,
       this.child,
       this.strokeColor = Colors.grey,
       this.fillColor = Colors.white,
+      this.padding,
       this.strokeWidth = 2.0,
       this.dashWidth = 5.0,
       this.dashSpace = 3.0,
@@ -32,7 +63,10 @@ class DecoratedContainer extends StatelessWidget {
         fillColor: fillColor,
         cornerRadius: cornerRadius,
       ),
-      child: child,
+      child: Container(
+        padding: padding,
+        child: child,
+      ),
     );
   }
 }
