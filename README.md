@@ -14,6 +14,8 @@ color.
 ```dart
 DecoratedContainer(
   cornerRadius: 16,
+  fillColor: Colors.white,
+  strokeColor: Colors.red,
   child: Center(child: Text("sample child widget")),
 )
 ```
@@ -24,13 +26,15 @@ DecoratedContainer(
   strokeWidth: 3,
   dashSpace: 4,
   dashWidth: 6,
-  fillColor: Colors.grey,
+  fillColor: Colors.white,
   cornerRadius: 16,
   strokeColor: Colors.red,
   child: Center(child: Text("sample child widget")),
 )
 ```
-### The widget used like below in some other projects
+### Sample UI:
+(as per the app module of `/example`)
+
 <img src="https://github.com/user-attachments/assets/a225cc60-d1bf-4323-9c63-acf34e998d89" alt="Screenshot_1723557954" width="400"/>
 
 
