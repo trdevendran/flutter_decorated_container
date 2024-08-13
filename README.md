@@ -31,7 +31,7 @@ DecoratedContainer(
 )
 ```
 ### The widget used like below in some other projects
-<img width="350" alt="Screenshot 2024-08-12 at 9 14 49 AM" src="https://github.com/user-attachments/assets/d7f73ea2-2d0e-4277-9e2c-a059c895b251">
+![Screenshot_1723557954](https://github.com/user-attachments/assets/a225cc60-d1bf-4323-9c63-acf34e998d89)
 
 ## Configuration Parameters
 | Variable Name  | Default Value | Purpose                                                                                      |
