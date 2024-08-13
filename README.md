@@ -31,7 +31,8 @@ DecoratedContainer(
 )
 ```
 ### The widget used like below in some other projects
-![Screenshot_1723557954](https://github.com/user-attachments/assets/a225cc60-d1bf-4323-9c63-acf34e998d89)
+<img src="https://github.com/user-attachments/assets/a225cc60-d1bf-4323-9c63-acf34e998d89" alt="Screenshot_1723557954" width="400"/>
+
 
 ## Configuration Parameters
 | Variable Name  | Default Value | Purpose                                                                                      |
