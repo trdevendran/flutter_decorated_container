@@ -4,20 +4,13 @@ import 'package:flutter/material.dart';
 
 class DecoratedContainer extends StatelessWidget {
   /// The [child] contained by the container.
-  ///
-  /// If null, and if the [constraints] are unbounded or also null, the
-  /// container will expand to fill all available space in its parent, unless
-  /// the parent provides unbounded constraints, in which case the container
-  /// will attempt to be as small as possible.
-  ///
-  /// {@macro flutter.widgets.ProxyWidget.child}
   final Widget? child;
 
   /// Specifies the color of the border or stroke around the [Widget]
   final Color strokeColor;
 
-  /// Specifies the color used to fill the inside of the  [Widget]
-  final Color fillColor;
+  /// Specifies the color used to fill behind the child  [Widget]
+  final Color backgroundColor;
 
   /// How wide to make edges to be drawn. The width is given in logical pixels measured in
   /// the direction orthogonal to the direction of the path.
@@ -41,32 +34,62 @@ class DecoratedContainer extends StatelessWidget {
   /// see [Decoration.padding].
   final EdgeInsetsGeometry? padding;
 
-  const DecoratedContainer(
-      {super.key,
-      this.child,
-      this.strokeColor = Colors.grey,
-      this.fillColor = Colors.white,
-      this.padding,
-      this.strokeWidth = 2.0,
-      this.dashWidth = 5.0,
-      this.dashSpace = 3.0,
-      this.cornerRadius});
+  /// Empty space to surround the [decoration] and [child].
+  final EdgeInsetsGeometry? margin;
+
+  /// To actually paint a [Decoration] at behind the [child].
+  /// Use the [color] property to specify a simple solid color.
+  /// Dashed/dotted border will be overlapped when this property has values.
+  final Decoration? decoration;
+
+  /// Whether to paint the box decoration behind or in front of the child.
+  final DecorationPosition decorationPosition;
+
+  const DecoratedContainer({
+    super.key,
+    this.child,
+    this.strokeColor = Colors.grey,
+    this.backgroundColor = Colors.white,
+    this.padding,
+    this.margin,
+    this.strokeWidth = 2.0,
+    this.dashWidth = 5.0,
+    this.dashSpace = 3.0,
+    this.cornerRadius,
+    this.decoration,
+    this.decorationPosition = DecorationPosition.background,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: _DashedBorderPainter(
-        strokeColor: strokeColor,
-        strokeWidth: strokeWidth,
-        dashWidth: dashWidth,
-        dashSpace: dashSpace,
-        fillColor: fillColor,
-        cornerRadius: cornerRadius,
-      ),
-      child: Container(
-        padding: padding,
-        child: child,
-      ),
+    if (decoration == null) {
+      return CustomPaint(
+        painter: _DashedBorderPainter(
+          strokeColor: strokeColor,
+          strokeWidth: strokeWidth,
+          dashWidth: dashWidth,
+          dashSpace: dashSpace,
+          fillColor: backgroundColor,
+          cornerRadius: cornerRadius,
+        ),
+        child: margin == null && padding == null
+            ? child
+            : Container(
+                decoration: decoration,
+                padding: padding,
+                margin: margin,
+                child: child,
+              ),
+      );
+    }
+    if (padding == null && margin == null && decoration != null) {
+      return DecoratedBox(decoration: decoration!, child: child);
+    }
+    return Container(
+      decoration: decoration,
+      padding: padding,
+      margin: margin,
+      child: child,
     );
   }
 }

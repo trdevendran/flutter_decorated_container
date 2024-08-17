@@ -1,12 +1,12 @@
 name: flutter_decorated_container
 description: "A Customisable Container widget for the dashed border with rounded corner radius and its background
 color."
-version: 0.1.0
+version: 1.0.0
 homepage: https://github.com/trdevendran/flutter_decorated_container.git
 repository: https://github.com/trdevendran/flutter_decorated_container.git
 
 environment:
-  sdk: '>=3.4.0 <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
