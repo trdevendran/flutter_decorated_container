@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_decorated_container/decorated_container.dart';
+import 'package:flutter_decorated_container/flutter_decorated_container.dart';
 
 void main() {
   runApp(const MyApp());
