@@ -1,13 +1,12 @@
 # flutter_decorated_container
-A Customisable Container widget for the dashed border with rounded corner radius and its background
-color.
+A Customisable widget for the dashed/dotted border around any widget.
 
 ## Features
 - A Container with special decorated options to make the widget more powerful
   - Dashed border around the container with rounded corner radius
   - Customisable strokeColor for the dashed line
   - Both width and gap of the dash can be customised
-  - fillColor as background color of the container
+  - Background color for the widget.
 
 ## Usage
 ### With Default values
@@ -35,8 +34,7 @@ DecoratedContainer(
 ### Sample UI:
 (as per the app module of `/example`)
 
-<img src="https://github.com/user-attachments/assets/a225cc60-d1bf-4323-9c63-acf34e998d89" alt="Screenshot_1723557954" width="400"/>
-
+<img src="https://github.com/user-attachments/assets/d7bcacb5-260a-43ef-af3c-009c8d9e8678" alt="Screenshot_1723913170" width="400"/>
 
 ## Configuration Parameters
 | Variable Name        | Default Value                   | Purpose                                                                                                                                                                                            |
